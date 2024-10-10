@@ -1,0 +1,15 @@
+<div class="_chat-container">
+  <div class="chat-header">
+    <div class="user-details">
+      <div class="avatar">
+        <img [src]="selectedChat.chatWithUser.safeUrl" alt="" />
+      </div>
+      <div class="username">
+        <h3>{{ selectedChat.chatWithUser.username }}</h3>
+      </div>
+    </div>
+    <app-logout></app-logout>
+  </div>
+  <app-messages></app-messages>
+  <app-chat-input></app-chat-input>
+</div>

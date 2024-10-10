@@ -1,0 +1,118 @@
+// .profile {
+//   background: #1b1c24;
+// }
+
+// :host::ng-deep{
+//   .p-avatar.p-avatar-circle{
+//     width: 42px;
+//     height: 42px;
+//     color: #ff006e;
+//     background: #712c4a57;
+//     border: 1px solid #ff006faa;
+//     font-size: 2rem;
+//     padding: 2rem;
+//     text-transform: capitalize;
+//   }
+// }
+
+._container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  background: #131324;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title-container {
+  h1 {
+    color: #fff;
+  }
+}
+.avatars {
+  display: flex;
+  gap: 2rem;
+  .avatar {
+    border: 0.4rem solid transparent;
+    padding: 0.4rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    img {
+      // height: 6rem;
+    }
+  }
+  .selected {
+    border: 0.4rem solid #4e0fff;
+  }
+}
+.submit-btn{
+  background: #997af0;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+  &:hover{
+    background: #4e0eff;
+  }
+}
+
+
+.loader {
+  position: relative;
+  width: 120px;
+  height: 90px;
+  margin: 0 auto;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #FF3D00;
+  animation: loading-bounce 0.5s ease-in-out infinite alternate;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 7px;
+  width: 45px;
+  border-radius: 4px;
+  box-shadow: 0 5px 0 #fff, -35px 50px 0 #fff, -70px 95px 0 #fff;
+  animation: loading-step 1s ease-in-out infinite;
+}
+
+@keyframes loading-bounce {
+  0% { transform: scale(1, 0.7)}
+  40% { transform: scale(0.8, 1.2)}
+  60% { transform: scale(1, 1)}
+  100% { bottom: 140px }
+}
+@keyframes loading-step {
+  0% {
+    box-shadow: 0 10px 0 rgba(0,0,0,0),
+                0 10px 0 #fff,
+              -35px 50px 0 #fff,
+              -70px 90px 0 #fff;
+  }
+  100% {
+    box-shadow: 0 10px 0 #fff,
+              -35px 50px 0 #fff,
+              -70px 90px 0 #fff,
+              -70px 90px 0 rgba(0,0,0,0);
+  }
+}

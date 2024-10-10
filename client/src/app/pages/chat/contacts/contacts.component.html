@@ -1,0 +1,31 @@
+<div class="chat-container">
+  <div class="_container" *ngIf="currentUserImage && currentUserName">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="" />
+      <h3>snappy</h3>
+    </div>
+    <div class="contacts">
+      <div
+        class="contact"
+        [ngClass]="{ selected: i === currentSelected }"
+        *ngFor="let contact of contacts; let i = index"
+        (click)="getSelectedChat(i,contact)"
+      >
+        <div class="avatar">
+          <img [src]="contact.safeUrl" alt="avatar" />
+        </div>
+        <div class="username">
+          <h3>{{ contact.username }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="current-user">
+      <div class="avatar">
+        <img [src]="currentUserImage" alt="" />
+      </div>
+      <div class="username">
+        <h2>{{ currentUserName }}</h2>
+      </div>
+    </div>
+  </div>
+</div>

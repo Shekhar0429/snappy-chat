@@ -1,0 +1,58 @@
+<!-- <div
+  class="bg-[#1b1c24] profile h-[100vh] flex items-center justify-center flex-col gap-10"
+>
+  <div class="flex flex-col gap-10 w-[80vw] md:w-max">
+    <div>
+      <i
+        class="pi pi-chevron-left text-4xl lg:text-6xl text-white/90 cursor-default"
+      ></i>
+    </div>
+    <div class="grid grid-cols-2">
+      <div
+        class="h-full w-32 md:w-48 md:h-48 relative flex items-center justify-center"
+        
+      >
+        <p-avatar  (mouseenter)="isHovered = true"
+        (mouseleave)="isHovered = false"
+          size="xlarge"
+          shape="circle"
+          styleClass="mr-2 "
+          class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden"
+        >
+          <div  class="text-base" >
+            <span *ngIf="!isHovered">{{ userInfo.email.split("").shift() ?? ""}}</span>
+            <span *ngIf="isHovered" class="">+</span>
+          </div>
+        </p-avatar> -->
+<!-- <p-avatar
+          [label]="userInfo.email.split('').shift() ?? ''"
+          styleClass="mr-2 "
+          size="xlarge"
+          shape="circle"
+          class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden"
+        ></p-avatar> -->
+<!-- </div>
+    </div>
+  </div>
+</div> -->
+<div class="_container" *ngIf="!isloading">
+ 
+  <div class="title-container">
+    <h1>Pick an avatar as your profile picture</h1>
+  </div>
+  <div class="avatars">
+    <div
+      class="avatar"
+      [ngClass]="{ 'selected': selectedAvatar === i }"
+      *ngFor="let avatar of avatarUrls; let i = index"
+    >
+      <img [src]="avatar.safeUrl" alt="Avatar" width="50" height="50" (click)="selectedAvatar = i" />
+    </div>
+  </div>
+  <button class="btn submit-btn" (click)="setProfilePicture()">Set as Profile Picture</button>
+</div>
+<div class="_container" *ngIf="isloading">
+  <span class="loader"  ></span>
+</div>
+
+<p-toast></p-toast>

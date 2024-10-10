@@ -1,0 +1,16 @@
+<div class="_container">
+  <div class="chat-container">
+    <app-contacts
+      [contacts]="contacts"
+      [userInfo]="userInfo"
+      (setSelectedChat)="setSelectedChat($event)"
+    ></app-contacts>
+
+    <ng-container *ngIf="selectedChat; else welcome">
+      <app-chat-container [userInfo]="userInfo" [selectedChat]="selectedChat"></app-chat-container>
+    </ng-container>
+    <ng-template #welcome>
+      <app-welcome [userInfo]="userInfo"></app-welcome>
+    </ng-template>
+  </div>
+</div>
